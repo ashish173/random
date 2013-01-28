@@ -1,0 +1,43 @@
+""" Facebook Hackathon -- Smiley Problem """
+
+def read_file(fname):
+	f = open(fanme,"r")
+	num = f.readline()
+	number = int(num)
+	list_string = []
+	for 
+
+
+
+
+def main():
+	string = ":(()"
+	stack = []
+	pos = []
+	count = 1
+	for x in range(len(string)):
+		key = string[x]
+		
+		if key in [' ', ""] or key.isalpha():
+			print key,'good'
+		elif string[x]==':' and (string[x+1]==')' or string[x+1]=='('):
+			pos.append(x)		 
+		elif string[x]==':':
+			print 'goog\d1'
+		elif key=='(':
+			stack.append(key)
+		elif key==')':
+			if not stack:
+				print "case #", count, " NO"
+				return 
+			stack.pop()
+		else:
+			print 'try agian'
+	if not stack:
+		print "case #", count, " YES"
+	if len(stack) == len(pos):
+		print "case #", count, " YES"	
+
+
+if __name__ == "__main__":
+	main()
