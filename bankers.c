@@ -62,7 +62,7 @@ do{
 		for(i=0;i<r;i++) {
 			printf("\n\tenter %d resource: ", i);
 			scanf("%d", &Tres[i]);
-			Ares[i] = Tres[i];   //asigning the total resources to the available resources
+			Ares[i] = Tres[i];   //assigning the total resources to the available resources
 		}
 		break;
 	case 2: printf("\n\tResource Allocation\n");
