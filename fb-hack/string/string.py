@@ -19,7 +19,7 @@ def remo(map1):
 
 def main():
     list1 = []
-    list1 = read_file("text")
+    list1 = read_file("st.txt")
     for x in range(len(list1)):
 		map1 = {}
 		string = list1[x]
@@ -33,13 +33,13 @@ def main():
 		map1 = remo(map1)
 		#print map
 		sort_list = sorted(map1, key=map1.__getitem__, reverse=True)
-		print sort_list
+		#print sort_list
 		y=0
 		sum1 = 0
 		for x in reversed(range(27-len(sort_list), 27)):
 			sum1 += x * map1[sort_list[y]]
 			y = y+1
-		print "case ",y,' :', sum1	 						 
+		print "case #",y,' :', sum1	 						 
 				
 
 if __name__ == "__main__":

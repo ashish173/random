@@ -1,0 +1,75 @@
+''' FACEBOOK HACKERCUP -FINDMIN PROBLEM '''
+#    __author__ == "Ashish singh"	
+
+
+
+def read_file(fname):
+	f = open(fname,"r")
+	num = f.readline()
+	number = int(num)
+	f.close()	
+	return number	
+	
+
+def mini(m, cur, k):
+	#print m[cur-k:cur]
+	for x in range(500):
+		if x in m[cur-k:cur]:
+			pass
+		else:
+			return x
+
+def chop(x):
+	return x[:-1] 
+
+def readf(fname, num):
+	f = open(fname,"r")
+	f.readline()
+	for x in range(num):
+		stri1 = f.readline()
+		stri2 = f.readline()
+	f.close()
+	string1 = chop(stri1)
+	string2 = chop(stri2)
+	return string1, string2					
+
+def integer(list1):
+	list2 = []
+	for x in list1:
+		list2.append(int(x))
+	return list2		
+
+def readnext(string):
+	list1 = string.split()
+	return list1
+	
+def main():
+	number = read_file("test")
+	counter = 0
+	for x in range(number):
+		list1 = []
+		list2 = []
+		counter += 1
+		string1, string2 = readf("test", x+1)
+		string1 = readnext(string1)
+		string2 = readnext(string2)	
+		list1 = integer(string1)
+		list2 = integer(string2)
+		n, k = list1[0], list1[1]
+		a, b, c, r = list2[0], list2[1], list2[2], list2[3]		
+		#print n, k,
+		m = []
+		m.append(34)
+		for i in range(1, k):
+			m.append((b * m[i-1] + c) % r)   #pseudo random generator
+		#print m	
+		for x in range(k, n):
+			m.append(mini(m, x, k))
+		print "case #%d : %d"% (counter,m[n-1])
+		
+
+	
+
+	
+if __name__ == "__main__":
+	main()	
